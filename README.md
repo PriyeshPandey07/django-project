@@ -122,15 +122,13 @@ To fulfill some of these factors, one can also use the `AWS Beanstalk` service t
 
 ## 🛠️ Author & Community  
 
-This project is crafted by **[Harshhaa](https://github.com/NotHarshhaa)** 💡.  
-I’d love to hear your feedback! Feel free to share your thoughts.  
+This project is crafted by **[Harshhaa](https://github.com/NotHarshhaa)** 💡.   
 
 📧 **Connect with me:**
 
-- **GitHub**: [@NotHarshhaa](https://github.com/NotHarshhaa)  
-- **Blog**: [ProDevOpsGuy](https://blog.prodevopsguy.xyz)  
-- **Telegram Community**: [Join Here](https://t.me/prodevopsguy)  
-- **LinkedIn**: [Harshhaa Vardhan Reddy](https://www.linkedin.com/in/harshhaa-vardhan-reddy/)  
+- **GitHub**: [@PriyeshPandey07](https://github.com/PriyeshPandey07)  
+
+- **LinkedIn**: [Priyesh Pandey](https://www.linkedin.com/in/priyesh-pandey-7548b4282/)  
 
 ---
 
@@ -140,4 +138,3 @@ If you found this helpful, consider **starring** ⭐ the repository and sharing 
 
 ### 📢 Stay Connected  
 
-![Follow Me](https://imgur.com/2j7GSPs.png)
