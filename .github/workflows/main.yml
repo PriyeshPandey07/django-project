@@ -19,6 +19,34 @@ jobs:
           aws-secret-key-id: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
 
-      - name: deploy a static site on s3 bucket
-        run: aws s3 sync . s3://priyesh-django-app-bucket --delete
+      - name: Login to DockerHub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USER }}" --password-stdin
+
+      - name: Build Docker Image
+        run: docker build -t ${{ secrets.DOCKER_USER }}/django-project .
+
+      - name: Push Docker Image
+        run: docker push ${{ secrets.DOCKER_USER }}/django-project
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ec2-user
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            sudo yum install docker -y 
+            sudo systemctl start docker
+            sudo systemctl enable docker
+            sudo usermod -aG docker ubuntu  
+            newgrp docker
+            sudo chmod 777 /var/run/docker.sock
+            sudo chmod 
+            docker pull ${{ secrets.DOCKER_USER }}/django-project
+            sudo docker stop $(docker ps -q)
+            docker run -d -p 8000:8000 --name site ${{ secrets.DOCKER_USER }}/django-project
+
+        
+
+      
       
